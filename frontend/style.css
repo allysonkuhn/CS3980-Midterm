@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #fdf6ec;
+  background-image: radial-gradient(#e8d0b8 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #2c1a0e;
+  padding: 2.5rem 1rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Title */
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #b5451b;
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.01em;
+}
+
+.container > h1 {
+  margin-bottom: 2rem;
+}
+
+/* Form Card */
+.form-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 24px rgba(181, 69, 27, 0.1);
+  margin-bottom: 2rem;
+  border-top: 5px solid #b5451b;
+}
+
+.form-card h2 {
+  font-family: 'Playfair Display', serif;
+  color: #b5451b;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 0.9rem;
+  border: 1.5px solid #e8d5c4;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  color: #2c1a0e;
+  background: #fffaf7;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #b5451b;
+  box-shadow: 0 0 0 3px rgba(181, 69, 27, 0.12);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #bca898;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.btn {
+  padding: 0.6rem 1.3rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: #b5451b;
+  color: white;
+  box-shadow: 0 2px 8px rgba(181, 69, 27, 0.25);
+}
+
+.btn-primary:hover {
+  background: #963a17;
+  box-shadow: 0 4px 12px rgba(181, 69, 27, 0.35);
+}
+
+.btn-secondary {
+  background: #f0e6dc;
+  color: #7a5c47;
+}
+
+.btn-secondary:hover { background: #e4d0c0; }
+
+/* Recipe Cards */
+.recipe-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin-bottom: 1rem;
+  border-left: 5px solid #b5451b;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 6px 20px rgba(181, 69, 27, 0.13);
+  transform: translateY(-2px);
+}
+
+.recipe-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: #b5451b;
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #a07858;
+  margin-bottom: 0.2rem;
+}
+
+.field-value {
+  font-size: 0.93rem;
+  color: #4a3728;
+  margin-bottom: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.btn-edit {
+  background: #f0a500;
+  color: white;
+  box-shadow: 0 2px 6px rgba(240, 165, 0, 0.25);
+}
+
+.btn-edit:hover {
+  background: #d4910a;
+  box-shadow: 0 4px 10px rgba(240, 165, 0, 0.35);
+}
+
+.btn-delete {
+  background: #e53935;
+  color: white;
+  box-shadow: 0 2px 6px rgba(229, 57, 53, 0.25);
+}
+
+.btn-delete:hover {
+  background: #c62828;
+  box-shadow: 0 4px 10px rgba(229, 57, 53, 0.35);
+}
+
+#no-recipes {
+  text-align: center;
+  color: #bca898;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  display: none;
+}

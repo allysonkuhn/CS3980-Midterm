@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Box</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <div class="container">
+    <h1>Recipe Box</h1>
+
+    <div class="form-card">
+      <h2 id="form-title">Add a New Recipe</h2>
+      <input type="text" id="title" placeholder="Recipe Title" />
+      <textarea id="ingredients" placeholder="Ingredients (e.g. 2 eggs, 1 cup flour...)"></textarea>
+      <textarea id="instructions" placeholder="Step by step instructions..."></textarea>
+      <div class="form-actions">
+        <button class="btn btn-primary" onclick="submitRecipe()">Save Recipe</button>
+        <button class="btn btn-secondary" id="cancel-btn" style="display:none" onclick="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+
+    <div id="recipe-list"></div>
+    <p id="no-recipes">No recipes saved yet</p>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
