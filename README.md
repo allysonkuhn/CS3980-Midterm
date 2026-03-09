@@ -46,8 +46,11 @@ Then open your browser and navigate to:
 http://127.0.0.1:8000
 ```
 
-Successful startup will show in the terminal as follows ...
+#### Successful startup will show in the terminal as follows ...
 ![alt text](images/terminal-image.png)
+
+#### Successful use of the app features will show in the terminal as follows ...
+![alt text](images/terminal2-image.png)
 
 ---
 
