@@ -2,6 +2,17 @@ const API = 'http://127.0.0.1:8000/recipes';
 let data = [];
 let editingId = null;
 
+function openForm() {
+  document.getElementById('form-card').style.display = 'block';
+  document.getElementById('add-recipe-btn').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function closeForm() {
+  document.getElementById('form-card').style.display = 'none';
+  document.getElementById('add-recipe-btn').style.display = 'inline-block';
+}
+
 function submitRecipe() {
   const title = document.getElementById('title').value.trim();
   const ingredients = document.getElementById('ingredients').value.trim();
@@ -25,6 +36,7 @@ function submitRecipe() {
         recipe.instructions = updated.instructions;
         editingId = null;
         clearForm();
+        closeForm();
         renderRecipes();
       }
     };
@@ -38,6 +50,7 @@ function submitRecipe() {
         const newRecipe = JSON.parse(xhr.response);
         data.push(newRecipe);
         clearForm();
+        closeForm();
         renderRecipes();
       }
     };
@@ -66,13 +79,14 @@ function startEdit(id) {
   document.getElementById('ingredients').value = recipe.ingredients;
   document.getElementById('instructions').value = recipe.instructions;
   document.getElementById('form-title').textContent = 'Edit Recipe';
-  document.getElementById('cancel-btn').style.display = 'inline-block';
+  openForm();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function cancelEdit() {
   editingId = null;
   clearForm();
+  closeForm();
 }
 
 function clearForm() {
@@ -80,7 +94,6 @@ function clearForm() {
   document.getElementById('ingredients').value = '';
   document.getElementById('instructions').value = '';
   document.getElementById('form-title').textContent = 'Add a New Recipe';
-  document.getElementById('cancel-btn').style.display = 'none';
 }
 
 function renderRecipes() {

@@ -21,7 +21,6 @@ body {
   margin: 0 auto;
 }
 
-/* Title */
 h1 {
   font-family: 'Playfair Display', serif;
   text-align: center;
@@ -32,10 +31,21 @@ h1 {
 }
 
 .container > h1 {
+  margin-bottom: 1.5rem;
+}
+
+.add-recipe-btn-wrap {
+  display: flex;
+  justify-content: center;
   margin-bottom: 2rem;
 }
 
-/* Form Card */
+.btn-add-new {
+  font-size: 1rem;
+  padding: 0.7rem 1.8rem;
+  border-radius: 12px;
+}
+
 .form-card {
   background: white;
   border-radius: 16px;
@@ -80,7 +90,6 @@ textarea {
   min-height: 90px;
 }
 
-/* Buttons */
 .form-actions {
   display: flex;
   gap: 0.6rem;
@@ -119,7 +128,6 @@ textarea {
 
 .btn-secondary:hover { background: #e4d0c0; }
 
-/* Recipe Cards */
 .recipe-card {
   background: white;
   border-radius: 14px;
