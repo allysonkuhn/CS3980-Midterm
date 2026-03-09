@@ -2,19 +2,6 @@
 
 A simple full-stack web application built with **FastAPI** and **HTML/CSS/JavaScript** that allows users to create, view, edit, and delete recipes.
 
----
-
-## Table of Contents
-
-- [About the App](#about-the-app)
-- [Project Structure](#project-structure)
-- [Setting Up the Virtual Environment](#setting-up-the-virtual-environment)
-- [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
-- [Frontend Overview](#frontend-overview)
-- [Screenshots](#screenshots)
-
----
 
 ## About the App
 
@@ -28,24 +15,6 @@ All data is stored in an in-memory list on the backend (no database required).
 
 ---
 
-## Project Structure
-```
-CS398/
-├── frontend/
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── main.js
-│   └── style.css
-├── venv/
-├── .gitignore
-├── main.py
-├── recipe.py
-├── recipe_routes.py
-└── README.md
-```
-
----
-
 ## Setting Up the Virtual Environment
 
 1. Make sure you have Python installed. Then, in the project root directory, run:
@@ -54,8 +23,6 @@ python -m venv venv
 ```
 
 2. Activate the virtual environment:
-
-- **Windows:**
 ```bash
 venv\Scripts\activate
 ```
