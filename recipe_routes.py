@@ -1,20 +1,20 @@
 from typing import Annotated
-
 from fastapi import APIRouter, HTTPException, Path, status
-
 from recipe import Recipe, RecipeRequest
 
+# Create a router for recipe-related endpoints
 recipe_router = APIRouter()
 
+# In-memory list to store recipes and a global ID counter
 recipe_list = []
 global_id = 0
 
-
+# Define endpoints for CRUD operations on recipes
 @recipe_router.get("")
 async def get_all_recipes() -> list[Recipe]:
     return recipe_list
 
-
+# Endpoint to create a new recipe, which increments the global ID and adds the new recipe to the list
 @recipe_router.post("", status_code=201)
 async def create_new_recipe(recipe: RecipeRequest) -> Recipe:
     global global_id  
@@ -23,7 +23,7 @@ async def create_new_recipe(recipe: RecipeRequest) -> Recipe:
     recipe_list.append(new_recipe)
     return new_recipe
 
-
+# Endpoint to edit an existing recipe by ID, which updates the recipe's details if found, otherwise raises a 404 error
 @recipe_router.put("/{id}")
 async def edit_recipe_by_id(
     id: Annotated[int, Path(gt=0, le=1000)], recipe: RecipeRequest
@@ -37,7 +37,7 @@ async def edit_recipe_by_id(
 
     raise HTTPException(status_code=404, detail=f"Item with ID={id} is not found.")
 
-
+# Endpoint to retrieve a recipe by ID, which returns the recipe if found, otherwise raises a 404 error
 @recipe_router.get("/{id}")
 async def get_recipe_by_id(id: Annotated[int, Path(gt=0, le=1000)]) -> Recipe:
     for recipe in recipe_list:
@@ -46,7 +46,7 @@ async def get_recipe_by_id(id: Annotated[int, Path(gt=0, le=1000)]) -> Recipe:
 
     raise HTTPException(status_code=404, detail=f"Item with ID={id} is not found.")
 
-
+# Endpoint to delete a recipe by ID, which removes the recipe from the list if found, otherwise raises a 404 error
 @recipe_router.delete("/{id}")
 async def delete_recipe_by_id(
     id: Annotated[
