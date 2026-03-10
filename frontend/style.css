@@ -1,11 +1,14 @@
+/* Import the Google Fonts for the application and set up global styles for the page */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;600;700&display=swap');
 
+/* Reset default styles and set box-sizing to border-box for all elements */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Set the base styles for the body, including font, background, and text color */
 body {
   font-family: 'Lato', sans-serif;
   background: #fdf6ec;
@@ -16,11 +19,13 @@ body {
   min-height: 100vh;
 }
 
+/* Center the content and set a maximum width for the container */
 .container {
   max-width: 720px;
   margin: 0 auto;
 }
 
+/* Style the main heading of the page with a serif font, color, and spacing */
 h1 {
   font-family: 'Playfair Display', serif;
   text-align: center;
@@ -30,22 +35,26 @@ h1 {
   letter-spacing: 0.01em;
 }
 
+/* Add spacing below the main heading */
 .container > h1 {
   margin-bottom: 1.5rem;
 }
 
+/* Style the wrapper for the "Add Recipe" button to center it and add spacing */
 .add-recipe-btn-wrap {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
+/* Style the "Add Recipe" button with font size, padding, and border radius */
 .btn-add-new {
   font-size: 1rem;
   padding: 0.7rem 1.8rem;
   border-radius: 12px;
 }
 
+/* Style the form card with background, border radius, padding, shadow, and a colored border on top */
 .form-card {
   background: white;
   border-radius: 16px;
@@ -55,6 +64,7 @@ h1 {
   border-top: 5px solid #b5451b;
 }
 
+/* Style the form title with a serif font, color, and spacing */
 .form-card h2 {
   font-family: 'Playfair Display', serif;
   color: #b5451b;
@@ -62,6 +72,7 @@ h1 {
   margin-bottom: 1.2rem;
 }
 
+/* Style the input fields and textareas with padding, border, font, and background */
 input, textarea {
   width: 100%;
   padding: 0.65rem 0.9rem;
@@ -75,27 +86,32 @@ input, textarea {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+/* Add focus styles to input fields and textareas for better user experience */
 input:focus, textarea:focus {
   outline: none;
   border-color: #b5451b;
   box-shadow: 0 0 0 3px rgba(181, 69, 27, 0.12);
 }
 
+/* Style the placeholder text in input fields and textareas with a lighter color */
 input::placeholder, textarea::placeholder {
   color: #bca898;
 }
 
+/* Allow textareas to be resized vertically and set a minimum height */
 textarea {
   resize: vertical;
   min-height: 90px;
 }
 
+/* Style the form action buttons with flexbox for layout and spacing */
 .form-actions {
   display: flex;
   gap: 0.6rem;
   margin-top: 0.4rem;
 }
 
+/* Style the buttons with padding, border radius, font, and transition effects */
 .btn {
   padding: 0.6rem 1.3rem;
   border: none;
@@ -107,27 +123,33 @@ textarea {
   transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
 }
 
+/* Add hover and active states to buttons for better interactivity */
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 
+/* Style the primary and secondary buttons with different colors and shadow effects */
 .btn-primary {
   background: #b5451b;
   color: white;
   box-shadow: 0 2px 8px rgba(181, 69, 27, 0.25);
 }
 
+/* Add hover state to the primary button with a darker background and stronger shadow */
 .btn-primary:hover {
   background: #963a17;
   box-shadow: 0 4px 12px rgba(181, 69, 27, 0.35);
 }
 
+/* Style the secondary button with a lighter background and different text color */
 .btn-secondary {
   background: #f0e6dc;
   color: #7a5c47;
 }
 
+/* Add hover state to the secondary button with a slightly darker background */
 .btn-secondary:hover { background: #e4d0c0; }
 
+/* Style the recipe cards with background, border radius, padding, shadow, and a colored border on the left */
 .recipe-card {
   background: white;
   border-radius: 14px;
@@ -138,11 +160,13 @@ textarea {
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
+/* Add hover effect to recipe cards with a stronger shadow and slight upward movement */
 .recipe-card:hover {
   box-shadow: 0 6px 20px rgba(181, 69, 27, 0.13);
   transform: translateY(-2px);
 }
 
+/* Style the recipe title with a serif font, color, and spacing */
 .recipe-card h3 {
   font-family: 'Playfair Display', serif;
   color: #b5451b;
@@ -150,6 +174,7 @@ textarea {
   margin-bottom: 0.8rem;
 }
 
+/* Style the field labels with uppercase text, letter spacing, and color */
 .field-label {
   font-size: 0.75rem;
   font-weight: 700;
@@ -159,6 +184,7 @@ textarea {
   margin-bottom: 0.2rem;
 }
 
+/* Style the field values with a slightly smaller font size, color, and line height */
 .field-value {
   font-size: 0.93rem;
   color: #4a3728;
@@ -167,34 +193,40 @@ textarea {
   white-space: pre-wrap;
 }
 
+/* Style the action buttons for each recipe card with flexbox for layout and spacing */
 .card-actions {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.6rem;
 }
 
+/* Style the edit and delete buttons with different colors and shadow effects */
 .btn-edit {
   background: #f0a500;
   color: white;
   box-shadow: 0 2px 6px rgba(240, 165, 0, 0.25);
 }
 
+/* Add hover state to the edit button with a darker background and stronger shadow */
 .btn-edit:hover {
   background: #d4910a;
   box-shadow: 0 4px 10px rgba(240, 165, 0, 0.35);
 }
 
+/* Style the delete button with a red background and white text, along with a shadow effect */
 .btn-delete {
   background: #e53935;
   color: white;
   box-shadow: 0 2px 6px rgba(229, 57, 53, 0.25);
 }
 
+/* Add hover state to the delete button with a darker red background and stronger shadow */
 .btn-delete:hover {
   background: #c62828;
   box-shadow: 0 4px 10px rgba(229, 57, 53, 0.35);
 }
 
+/* Style the message that appears when there are no recipes, centering the text and using a lighter color and italic font */
 #no-recipes {
   text-align: center;
   color: #bca898;
