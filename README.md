@@ -2,6 +2,7 @@
 
 A simple full-stack web application built with **FastAPI** and **HTML/CSS/JavaScript** that allows users to create, view, edit, and delete recipes.
 
+---
 
 ## About the App
 
